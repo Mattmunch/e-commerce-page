@@ -16,7 +16,7 @@ test('renders a car', assert => {
         category: 'muscle',
         price: 28000
     };
-    const expected = `<li class="muscle" title="Ford's flagship muscle car"><h3>Ford Mustang</h3><img src="assets/mustang.jpeg" alt="Blue Mustang image"><p class="price">$28,000<button value="mustang">Add</button></p></li>`;
+    const expected = `<li class="muscle" title="Ford's flagship muscle car"><h3>Ford Mustang</h3><img src="../assets/mustang.jpeg" alt="Ford Mustang image"><p class="price">$28,000.00<button value="mustang">Add</button></p></li>`;
 
     //Act 
     // Call the function you're testing and set the result to a const
