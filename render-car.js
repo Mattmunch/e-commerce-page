@@ -21,7 +21,7 @@ function renderCar(car) {
     p.appendChild(priceTextNode);
     
     const button = document.createElement('button');
-    button.textContent = 'Add';
+    button.textContent = 'Add to Cart';
     button.value = car.code;
     p.appendChild(button);
 

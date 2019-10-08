@@ -1,7 +1,7 @@
 import cars from './cars.js';
 import renderCar from './render-car.js';
 
-const list = document.getElementById('fruits');
+const list = document.getElementById('cars');
 
 for (let i = 0; i < cars.length; i++) {
     const car = cars[i];

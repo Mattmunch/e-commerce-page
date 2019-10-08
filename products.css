@@ -2,3 +2,76 @@ img {
     width: 350px;
     height: auto;
 }
+body{
+background-image: url(./assets/carbon-fiber-background.jpg);
+background-repeat: round;
+color: darkslategray;
+background-attachment: fixed;
+background-color: black;
+font-family: 'Merriweather', serif;
+text-align: center;
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    background-color: darkslategray;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    top: -4px;
+    font-size: 12pt;
+    color: aliceblue
+    
+}
+button:hover {
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    
+}
+
+li {
+    height: 360px;
+    width: 350px;
+    margin: 30px 30px 30px 30px;
+    background-color: slategray;
+    border: solid rgb(99, 0, 0) 5px;
+    border-radius: 15%;
+    transition: 0.3s linear;
+    box-shadow: 0px 0px 0px 5px rgb(99, 0, 0);
+    transition: box-shadow 0.2s linear;
+    
+    
+}
+li:hover {
+    box-shadow: 0px 0px 0px 10px rgb(135, 20, 20);
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    background-color: slategray;
+    display: inline-block;
+    border: solid rgb(99, 0, 0) 5px;
+    padding: 10px;
+    border-radius: 27%;
+    
+}
+h3 {
+    font-size: 1.5rem;
+}
+p {
+    font-size: 1.5rem;
+}
+
