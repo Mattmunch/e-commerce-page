@@ -3,7 +3,7 @@ img {
     height: auto;
 }
 body{
-background-image: url(./assets/carbon-fiber-background.jpg);
+background-image: url(../assets/carbon-fiber-background.jpg);
 background-repeat: round;
 color: darkslategray;
 background-attachment: fixed;
@@ -19,8 +19,6 @@ button {
     border-radius: 8px;
     margin-left: 10px;
     margin-bottom: 10px;
-    position: relative;
-    top: -4px;
     font-size: 12pt;
     color: aliceblue
     
@@ -73,5 +71,8 @@ h3 {
 }
 p {
     font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
