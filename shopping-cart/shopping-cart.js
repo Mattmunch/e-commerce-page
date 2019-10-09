@@ -8,16 +8,16 @@ const tableElement = document.querySelector('tbody');
 
 let cartTotal = 0;
 cart.forEach(carOrder => {
-    cars.forEach(cars => {
+    cars.forEach(car => {
         let carTotal;
 
-        if (cart.id === carOrder.id) {
-            const row = renderTableRow(cars, carOrder);
+        if (car.id === carOrder.id) {
+            const row = renderTableRow(car, carOrder);
 
 
             tableElement.appendChild(row);
 
-            carTotal = cars.price * carOrder.quantity;
+            carTotal = car.price * carOrder.quantity;
 
             cartTotal = cartTotal + carTotal;
         }

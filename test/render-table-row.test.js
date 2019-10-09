@@ -1,7 +1,6 @@
 import renderCar from '../products/render-car.js';
 import renderTableRow from '../shopping-cart/render-table-row.js';
-import cars from '../api.js';
-import { findItemById } from '../common/utils.js';
+
 
 
 // IMPORT MODULES under test here:
@@ -9,26 +8,31 @@ import { findItemById } from '../common/utils.js';
 
 const test = QUnit.test;
 QUnit.module('Render Car');
-test('renders a car', assert => {
+test('renders a table row', assert => {
     //Arrange
     // Set up your parameters and expectations
     const mustang = {
-        code: 'mustang',
+        id: 'mustang',
         name: 'Ford Mustang',
         image: '../assets/mustang.jpeg',
         description: "Ford's flagship muscle car",
         category: 'muscle',
         price: 28000
     };
-    const expected = `<li class="muscle" title="Ford's flagship muscle car"><h3>Ford Mustang</h3><img src="../assets/mustang.jpeg" alt="Ford Mustang image"><p class="price">$28,000.00<button value="mustang">Add to Cart</button></p></li>`;
+
+    const mustangOrder = {
+        id: 'mustang',
+        quantity: 4,
+    };
+
+    const expected = '<tr><td>Ford Mustang</td><td>4</td><td>$28,000.00</td><td>$112,000.00</td></tr>';
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const dom = renderCar(mustang);
+    const dom = renderTableRow(mustang, mustangOrder);
     const html = dom.outerHTML;
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(html, expected);
 });
-
 
