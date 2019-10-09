@@ -1,7 +1,5 @@
 import renderCar from '../products/render-car.js';
-import renderTableRow from '../shopping-cart/render-table-row.js';
-import cars from '../api.js';
-import { findItemById } from '../common/utils.js';
+
 
 
 // IMPORT MODULES under test here:

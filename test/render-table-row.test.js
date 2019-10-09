@@ -1,4 +1,4 @@
-import renderCar from '../products/render-car.js';
+
 import renderTableRow from '../shopping-cart/render-table-row.js';
 
 
