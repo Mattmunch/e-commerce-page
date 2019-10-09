@@ -2,7 +2,6 @@
 
 
 
-
 export default (car, order) => {
 
     const tableRow = document.createElement('tr');

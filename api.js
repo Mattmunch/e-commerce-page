@@ -1,5 +1,5 @@
 const mustang = {
-    code: 'mustang',
+    id: 'mustang',
     name: 'Ford Mustang',
     image: '../assets/mustang.jpeg',
     description: "Ford's flagship muscle car",
@@ -7,7 +7,7 @@ const mustang = {
     price: 28000
 };
 const subSti = {
-    code: 'subSti',
+    id: 'subSti',
     name: 'Subaru STI',
     image: '../assets/subaruSTI.jpg',
     description: "Subaru's most popular sports car",
@@ -15,7 +15,7 @@ const subSti = {
     price: 43000
 };
 const mitsEvo = {
-    code: 'mitsEvo',
+    id: 'mitsEvo',
     name: 'Mitsubishi Evolution',
     image: '../assets/mitsubishiEVO.jpg',
     description: "Mitsubishi's most popular sports car",
@@ -23,7 +23,7 @@ const mitsEvo = {
     price: 38000
 };
 const hellcat = {
-    code: 'hellcat',
+    id: 'hellcat',
     name: 'Dodge Hellcat',
     image: '../assets/hellcat.jpg',
     description: "Dodge's flagship muscle car",
@@ -31,7 +31,7 @@ const hellcat = {
     price: 60000
 };
 const nissanGtr = {
-    code: 'nissanGtr',
+    id: 'nissanGtr',
     name: 'Nissan GTR',
     image: '../assets/nissanGTR.jpg',
     description: "Nissan's most sought after sports car",
@@ -39,7 +39,7 @@ const nissanGtr = {
     price: 114000
 };
 const supra = {
-    code: 'supra',
+    id: 'supra',
     name: 'Toyota Supra',
     image: '../assets/toyotasupra.jpg',
     description: "Toyota's flagship sports car",
@@ -56,3 +56,13 @@ const cars = [
 ];
 export default cars;
 
+export const cart = [{
+    id: 'mustang',
+    quantity: 2,
+}, {
+    id: 'subSti',
+    quantity: 3,
+}, {
+    id: 'nissanGtr',
+    quantity: 1,
+}];
