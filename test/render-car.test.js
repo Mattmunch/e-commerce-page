@@ -1,6 +1,6 @@
 import renderCar from '../products/render-car.js';
 import renderTableRow from '../shopping-cart/render-table-row.js';
-import { cart } from '../api.js';
+
 
 // IMPORT MODULES under test here:
 // import example from '../src/example.js';
@@ -46,13 +46,17 @@ test('renders a table row', assert => {
         quantity: 4,
     };
 
-    const expected = '<tr><td>mustang</td><td>4</td><td>28000</td><td>112000</td></tr>';
+    const expected = '<tr><td>Ford Mustang</td><td>4</td><td>$28,000.00</td><td>$112,000.00</td></tr>';
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const dom = renderTableRow(mustang);
+    const dom = renderTableRow(mustang, mustangOrder);
     const html = dom.outerHTML;
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(html, expected);
 });
+
+test('finds item in array using id' assert => {
+    
+})
