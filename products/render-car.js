@@ -1,39 +1,20 @@
 import { findItemById } from '../common/utils.js';
 export const CART_KEY = 'cart';
-const emptyCart = [{ id: 'apple', quantity: 1 }];
+
 const initializeEmptyCart = () => {
+    const emptyCart = [];
     const serializedCart = JSON.stringify(emptyCart);
     localStorage.setItem('cart', serializedCart);
 };
+
+
 
 const setCart = (currentCart) => {
     const serializedNewCart = JSON.stringify(currentCart);
     localStorage.setItem(CART_KEY, serializedNewCart);
 };
 
-const getCart = () => JSON.parse(localStorage.getItem(CART_KEY));
-
-export const incrementInCartById = (id, cart) => {
-    let thereIsAMatch = false;
-    cart.forEach(order => {
-        if (order.id === id) {
-            order.quantity++;
-            thereIsAMatch = true;
-        }
-    });
-
-    if (thereIsAMatch) {
-        return;
-    } else {
-        const newItem = {
-            id: id,
-            quantity: 1,
-        };
-        cart.push(newItem);
-    }
-
-};
-
+export const getCart = () => JSON.parse(localStorage.getItem(CART_KEY));
 
 
 function renderCar(car) {
@@ -61,18 +42,27 @@ function renderCar(car) {
     const myButton = document.createElement('button');
     myButton.textContent = 'Add to Cart';
     myButton.value = car.id;
-    myButton.value = car.id;
     myButton.addEventListener('click', () => {
         
         let currentCart = getCart();
         
         if (!currentCart) {
             initializeEmptyCart();
-            currentCart = getCart();
         }
-        let carToIncrement = findItemById(car.id, currentCart);
-        carToIncrement && carToIncrement.quantity++;
-        
+        console.log(currentCart);
+      
+        let carToIncrement = findItemById(currentCart, car.id); 
+
+        if (!carToIncrement) {
+            carToIncrement = {
+
+                id: myButton.value,
+                quantity: 1
+            };
+            currentCart.push(carToIncrement);
+        } else {
+            carToIncrement.quantity = carToIncrement.quantity + 1;
+        }      
         setCart(currentCart);
         
     });
