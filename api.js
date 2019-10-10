@@ -46,7 +46,7 @@ const supra = {
     category: 'import',
     price: 50000
 };
-const cars = [
+const dataCars = [
     supra,
     nissanGtr,
     hellcat,
@@ -54,15 +54,4 @@ const cars = [
     subSti,
     mustang
 ];
-export default cars;
-
-export const cart = [{
-    id: 'mustang',
-    quantity: 2,
-}, {
-    id: 'subSti',
-    quantity: 3,
-}, {
-    id: 'nissanGtr',
-    quantity: 1,
-}];
+export default dataCars;
