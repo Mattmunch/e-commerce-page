@@ -8,6 +8,9 @@ export const makePrettyCurrency = (number) =>
             });
 
 export const findItemById = (cars, id) => {
+    if (!cars){
+        return false;
+    }
     for (let i = 0; i < cars.length; i++) {
         const car = cars[i];
         if (car.id === id) {

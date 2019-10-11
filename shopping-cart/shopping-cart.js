@@ -2,8 +2,8 @@ import renderTableRow from './render-table-row.js';
 import dataCars from '../api.js';
 import { makePrettyCurrency, findItemById, calcCartTotal, calcLineTotal } from '../common/utils.js';
 import { CART_KEY } from '../products/render-car.js';
-const orderTotalCell = document.getElementById('order-total-cell');
-const placeOrderButton = document.getElementById('place-order');
+// const orderTotalCell = document.getElementById('order-total-cell');
+// const placeOrderButton = document.getElementById('place-order');
 
 
 
@@ -28,9 +28,6 @@ const addRows = (cart, cars) => {
 };
 calcLineTotal(cart.quantity, cart.price);
 
-const cartTotal = calcCartTotal(cart, cars);
-  
-makePrettyCurrency(cartTotal);
 
 
 const buildTotalCell = (cart, cars) => {

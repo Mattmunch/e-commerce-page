@@ -45,24 +45,13 @@ function renderCar(car) {
     myButton.addEventListener('click', () => {
         
         let currentCart = getCart();
+        // let carToIncrement = findItemById(currentCart, car.id); 
         
         if (!currentCart) {
             initializeEmptyCart();
-        }
-        console.log(currentCart);
-      
-        let carToIncrement = findItemById(currentCart, car.id); 
-
-        if (!carToIncrement) {
-            carToIncrement = {
-
-                id: myButton.value,
-                quantity: 1
-            };
-            currentCart.push(carToIncrement);
-        } else {
-            carToIncrement.quantity = carToIncrement.quantity + 1;
-        }      
+            currentCart = getCart();
+        } 
+        findItemById(currentCart);
         setCart(currentCart);
         
     });
