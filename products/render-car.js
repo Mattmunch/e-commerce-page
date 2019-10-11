@@ -3,18 +3,18 @@ export const CART_KEY = 'cart';
 
 const initializeEmptyCart = () => {
     const emptyCart = [];
-    const serializedCart = JSON.stringify(emptyCart);
-    localStorage.setItem('cart', serializedCart);
+    const serializedEmptyCart = JSON.stringify(emptyCart);
+    localStorage.setItem('cart', serializedEmptyCart);
 };
 
 
 
-const setCart = (currentCart) => {
-    const serializedNewCart = JSON.stringify(currentCart);
-    localStorage.setItem(CART_KEY, serializedNewCart);
-};
+// const setCart = (currentCart) => {
+//     const serializedNewCart = JSON.stringify(currentCart);
+//     localStorage.setItem(CART_KEY, serializedNewCart);
+// };
 
-export const getCart = () => JSON.parse(localStorage.getItem(CART_KEY));
+// export const getCart = () => JSON.parse(localStorage.getItem(CART_KEY));
 
 
 function renderCar(car) {
@@ -43,24 +43,40 @@ function renderCar(car) {
     myButton.textContent = 'Add to Cart';
     myButton.value = car.id;
     myButton.addEventListener('click', () => {
+        let json = localStorage.getItem(CART_KEY);
+        let currentCart;
+
+        if (json) {
+            currentCart = JSON.parse(json);
+        } else {
+            currentCart = [];
+        }
         
-        let currentCart = getCart();
-        // let carToIncrement = findItemById(currentCart, car.id); 
         
-        if (!currentCart) {
-            initializeEmptyCart();
-            currentCart = getCart();
-        } 
-        findItemById(currentCart);
-        setCart(currentCart);
+        let lineItem = findItemById(currentCart, car.id);
+        if (!lineItem) {
+            lineItem = {
+                id: car.id,
+                quantity: 1
+            };
+            currentCart.push(lineItem);
+        } else {
+            lineItem.quantity++;
+            console.log(lineItem.quantity);
+        }
+        json = JSON.stringify(currentCart);
+        localStorage.setItem(CART_KEY, json);
+    }
         
-    });
+
+    );
+
     pTag.appendChild(myButton);
 
     li.appendChild(pTag);
 
     return li;
-    
+
 }
 
 
