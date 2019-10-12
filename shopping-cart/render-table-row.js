@@ -11,8 +11,10 @@ const makeTd = (content) => {
 
 
 export default (car, cart) => {
+    
     const tableRow = document.createElement('tr');
     const totalPrice = cart.quantity * car.price;
+    
     const prettyPrice = makePrettyCurrency(car.price);
     const prettyTotal = makePrettyCurrency(totalPrice);
 

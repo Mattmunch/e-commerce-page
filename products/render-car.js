@@ -1,11 +1,13 @@
 import { findItemById } from '../common/utils.js';
 export const CART_KEY = 'cart';
 
+
 const initializeEmptyCart = () => {
     const emptyCart = [];
     const serializedCart = JSON.stringify(emptyCart);
-    localStorage.setItem('cart', serializedCart);
+    localStorage.setItem(CART_KEY, serializedCart);
 };
+
 
 
 
@@ -44,15 +46,16 @@ function renderCar(car) {
     myButton.value = car.id;
     myButton.addEventListener('click', () => {
         
-        let currentCart = getCart();
-        
-        if (!currentCart) {
+        if (getCart() === null) {
             initializeEmptyCart();
         }
-        console.log(currentCart);
+
+        let currentCart = getCart();
+
+        
       
         let carToIncrement = findItemById(currentCart, car.id); 
-
+    
         if (!carToIncrement) {
             carToIncrement = {
 
