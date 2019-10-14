@@ -9,7 +9,7 @@ const mustang = {
 const subSti = {
     code: 'subSti',
     name: 'Subaru STI',
-    image: '../asset/subaruSTI.jpg',
+    image: '../assets/subaruSTI.jpg',
     description: "Subaru's most popular sports car",
     category: 'import',
     price: 43000
