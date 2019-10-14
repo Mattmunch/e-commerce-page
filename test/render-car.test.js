@@ -11,7 +11,7 @@ test('renders a car', assert => {
     //Arrange
     // Set up your parameters and expectations
     const mustang = {
-        code: 'mustang',
+        id: 'mustang',
         name: 'Ford Mustang',
         image: '../assets/mustang.jpeg',
         description: "Ford's flagship muscle car",

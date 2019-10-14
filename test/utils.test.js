@@ -1,6 +1,6 @@
 
 import cars from '../api.js';
-import { findItemById, calcLineTotal, calcOrderTotal } from '../common/utils.js';
+import { findItemById, calcLineTotal, calcCartTotal } from '../common/utils.js';
 
 
 // IMPORT MODULES under test here:
@@ -92,7 +92,7 @@ test('calculate order total', (assert) => {
     }];
 
     // act
-    const orderTotal = calcOrderTotal(cart, cars);
+    const orderTotal = calcCartTotal(cart, cars);
 
     // assert
     assert.equal(orderTotal, expected);

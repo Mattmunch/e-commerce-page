@@ -7,11 +7,12 @@ export const makePrettyCurrency = (number) =>
                 currency: 'USD',
             });
 
-export const findItemById = (items, id) => {
-    for (let i = 0; i < items.length; i++) {
-        const item = items[i];
-        if (item.id === id) {
-            return item;
+export const findItemById = (cars, id) => {
+    
+    for (let i = 0; i < cars.length; i++) {
+        const car = cars[i];
+        if (car.id === id) {
+            return car;
         }
     }
 };
@@ -26,17 +27,17 @@ export function calcLineTotal(quantity, price) {
 function roundCurrency(amount) {
     return Math.round(amount * 100) / 100;
 }
-export function calcOrderTotal(cart, cars) {
-    let orderTotal = 0;
+export function calcCartTotal(cart, cars) {
+    let cartTotal = 0;
 
     for (let i = 0; i < cart.length; i++) {
         const lineItem = cart[i];
         const car = findItemById(cars, lineItem.id);
         const lineTotal = calcLineTotal(lineItem.quantity, car.price);
-        orderTotal += lineTotal;
+        cartTotal += lineTotal;
     }
 
-    return makePrettyCurrency(orderTotal);
+    return makePrettyCurrency(cartTotal);
 }
 
 

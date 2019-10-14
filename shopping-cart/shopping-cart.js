@@ -1,28 +1,48 @@
 import renderTableRow from './render-table-row.js';
-import cars from '../api.js';
-import { cart } from '../api.js';
-import { makePrettyCurrency } from '../common/utils.js';
+import dataCars from '../api.js';
+import { makePrettyCurrency, findItemById, calcCartTotal } from '../common/utils.js';
+import { CART_KEY } from '../products/render-car.js';
 
+const javascriptReadableCart = JSON.parse(localStorage.getItem(CART_KEY));
+const addRows = (cart, cars) => {
+    cart.forEach(carOrder => {
+        addRow(carOrder, cars);
+    });
+};
+
+const cartTotal = calcCartTotal(javascriptReadableCart, dataCars);
+
+makePrettyCurrency(cartTotal);
+
+
+const buildTotalCell = (cart, cars) => {
+    const totalCell = document.getElementById('order-total-cell');
+    const cartTotal = calcCartTotal(javascriptReadableCart, cars);
+
+    totalCell.textContent = makePrettyCurrency(cartTotal);
+};
 const tableElement = document.querySelector('tbody');
 
+const addRow = (carOrder, cars) => {
+    
+    const orderCar = findItemById(cars, carOrder.id);
+    // const actualOrder = calcLineTotal(carOrder.quantity, orderCar.price);
 
-let cartTotal = 0;
-cart.forEach(carOrder => {
-    cars.forEach(car => {
-        let carTotal;
+    const row = renderTableRow(orderCar, carOrder);
+    tableElement.appendChild(row);
+    
 
-        if (car.id === carOrder.id) {
-            const row = renderTableRow(car, carOrder);
+};
+const buildTable = (cart, cars) => {
+    addRows(cart, cars);
+    buildTotalCell(cart, cars);
+};
+// calcLineTotal(javascriptReadableCart.quantity, javascriptReadableCart.price);
+buildTable(javascriptReadableCart, dataCars);
 
 
-            tableElement.appendChild(row);
 
-            carTotal = car.price * carOrder.quantity;
 
-            cartTotal = cartTotal + carTotal;
-        }
-    });
 
-    const totalCell = document.getElementById('order-total-cell');
-    totalCell.textContent = makePrettyCurrency(cartTotal);
-});
+
+
