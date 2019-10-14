@@ -1,11 +1,11 @@
 import { findItemById } from '../common/utils.js';
 export const CART_KEY = 'cart';
 
-const initializeEmptyCart = () => {
-    const emptyCart = [];
-    const serializedEmptyCart = JSON.stringify(emptyCart);
-    localStorage.setItem('cart', serializedEmptyCart);
-};
+// const initializeEmptyCart = () => {
+//     const emptyCart = [];
+//     const serializedEmptyCart = JSON.stringify(emptyCart);
+//     localStorage.setItem('cart', serializedEmptyCart);
+// };
 
 
 
@@ -62,7 +62,7 @@ function renderCar(car) {
             currentCart.push(lineItem);
         } else {
             lineItem.quantity++;
-            console.log(lineItem.quantity);
+          
         }
         json = JSON.stringify(currentCart);
         localStorage.setItem(CART_KEY, json);
