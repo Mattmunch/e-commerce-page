@@ -3,6 +3,7 @@ import dataCars from '../api.js';
 import { makePrettyCurrency, findItemById, calcCartTotal } from '../common/utils.js';
 import { CART_KEY } from '../products/render-car.js';
 
+
 const javascriptReadableCart = JSON.parse(localStorage.getItem(CART_KEY));
 const addRows = (cart, cars) => {
     cart.forEach(carOrder => {
@@ -10,9 +11,11 @@ const addRows = (cart, cars) => {
     });
 };
 
+
 const cartTotal = calcCartTotal(javascriptReadableCart, dataCars);
 
 makePrettyCurrency(cartTotal);
+
 
 
 const buildTotalCell = (cart, cars) => {

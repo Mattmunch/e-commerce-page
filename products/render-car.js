@@ -46,6 +46,7 @@ function renderCar(car) {
     myButton.value = car.id;
     myButton.addEventListener('click', () => {
         
+
         if (getCart() === null) {
             initializeEmptyCart();
         }
@@ -66,6 +67,7 @@ function renderCar(car) {
         } else {
             carToIncrement.quantity = carToIncrement.quantity + 1;
         }      
+
         setCart(currentCart);
         
     });
