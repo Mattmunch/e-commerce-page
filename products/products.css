@@ -3,7 +3,7 @@ img {
     height: auto;
 }
 body{
-background-image: url(./assets/carbon-fiber-background.jpg);
+background-image: url(../assets/carbon-fiber-background.jpg);
 background-repeat: round;
 color: darkslategray;
 background-attachment: fixed;
@@ -19,8 +19,6 @@ button {
     border-radius: 8px;
     margin-left: 10px;
     margin-bottom: 10px;
-    position: relative;
-    top: -4px;
     font-size: 12pt;
     color: aliceblue
     
@@ -48,7 +46,7 @@ li {
     margin: 30px 30px 30px 30px;
     background-color: slategray;
     border: solid rgb(99, 0, 0) 5px;
-    border-radius: 15%;
+    border-radius: 40px;
     transition: 0.3s linear;
     box-shadow: 0px 0px 0px 5px rgb(99, 0, 0);
     transition: box-shadow 0.2s linear;
@@ -65,7 +63,7 @@ h1 {
     display: inline-block;
     border: solid rgb(99, 0, 0) 5px;
     padding: 10px;
-    border-radius: 27%;
+    border-radius: 20px;
     
 }
 h3 {
@@ -73,5 +71,8 @@ h3 {
 }
 p {
     font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 

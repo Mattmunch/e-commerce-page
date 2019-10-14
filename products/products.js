@@ -1,4 +1,4 @@
-import cars from './cars.js';
+import cars from '../api.js';
 import renderCar from './render-car.js';
 
 const list = document.getElementById('cars');
