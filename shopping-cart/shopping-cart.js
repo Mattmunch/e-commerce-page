@@ -1,6 +1,6 @@
 import renderTableRow from './render-table-row.js';
 import dataCars from '../api.js';
-import { makePrettyCurrency, findItemById, calcCartTotal,} from '../common/utils.js';
+import { makePrettyCurrency, findItemById, calcCartTotal } from '../common/utils.js';
 import { CART_KEY } from '../products/render-car.js';
 
 const javascriptReadableCart = JSON.parse(localStorage.getItem(CART_KEY));
